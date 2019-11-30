@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1011002040651",
+    "firebase_url": "https://ak-cosmetics.firebaseio.com",
+    "project_id": "ak-cosmetics",
+    "storage_bucket": "ak-cosmetics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011002040651:android:f772bd0bba75a02cd508ce",
+        "android_client_info": {
+          "package_name": "com.axel.akcosmetics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1011002040651-n0d5o9fe5i6in0172cpa9duj3m2cfgan.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.axel.akcosmetics",
+            "certificate_hash": "e1a1e8ec32f1cfa7929ac8bdfdf51bc75ad391ef"
+          }
+        },
+        {
+          "client_id": "1011002040651-da8a9ih4jir2u3fr7d0t4glc9taaebvj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA17bLJKcqGWC1qY72aVM7NAhatZo_3Lso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1011002040651-da8a9ih4jir2u3fr7d0t4glc9taaebvj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
