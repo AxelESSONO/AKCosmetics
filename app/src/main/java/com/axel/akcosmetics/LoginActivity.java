@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity
     private String parentDbName = "Users";
     private CheckBox chkBoxRememberMe;
 
+
     private TextView AdminLink, NotAdminLink;
 
     @Override

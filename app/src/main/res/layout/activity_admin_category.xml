@@ -12,11 +12,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="40dp"
-        android:text="Ajouter un nouveau produit"
+        android:text="Selectionner la catégorie du nouveau produit"
         android:textColor="@color/colorPrimaryDark"
         android:textAlignment="center"
-        android:textSize="26sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         />
 
