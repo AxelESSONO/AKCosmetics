@@ -113,7 +113,8 @@ public class AdminCategoryActivity extends AppCompatActivity
         });
 
 
-        shoes.setOnClickListener(new View.OnClickListener() {
+        shoes.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
