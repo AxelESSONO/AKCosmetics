@@ -13,10 +13,10 @@
         android:layout_height="200dp"
         android:src="@drawable/applogo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="30dp"/>
 
     <EditText
-        android:id="@+id/phone_number_input"
+        android:id="@+id/login_phone_number_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/login_applogo"
@@ -24,7 +24,7 @@
         android:padding="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:hint="Votre numéro de téléphone"
         android:textColorHint="@color/colorPrimaryDark"
         android:inputType="number"
@@ -36,7 +36,7 @@
         android:id="@+id/login_password_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/phone_number_input"
+        android:layout_below="@+id/login_phone_number_input"
         android:background="@drawable/input_design"
         android:padding="20dp"
         android:layout_marginLeft="20dp"
@@ -55,32 +55,37 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/login_password_input"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp">
 
         <com.rey.material.widget.CheckBox
             android:id="@+id/remember_me_chk"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             style="@style/Material.Drawable.CheckBox"
-            android:text="Remember me"
+            android:text="Se souvenir de moi?"
             android:textColor="@color/colorPrimaryDark"
             app:cbd_strokeColor="@color/colorPrimaryDark"
             android:gravity="center_vertical"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
-            android:layout_marginLeft="20dp"
             android:textAllCaps="false"/>
 
         <TextView
             android:id="@+id/forget_password_link"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Mot de passe oublié ?"
+            android:layout_weight="1"
+            android:text="Mot de passe oublié?"
+            android:textAlignment="textEnd"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:textSize="14sp"
             android:textStyle="bold"
-            android:layout_marginLeft="80dp"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            tools:ignore="RtlCompat" />
 
     </LinearLayout>
 
@@ -90,7 +95,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/linear_layout_1"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/buttons"

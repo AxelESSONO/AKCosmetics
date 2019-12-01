@@ -27,7 +27,7 @@ public class RegisterActivity extends AppCompatActivity
 {
 
     private Button CreateAccountButton;
-    private EditText InputName, InputPhoneNumber, InputPassWord;
+    private EditText InputName, InputPhoneNumber, InputPassword;
     private ProgressDialog loadingBar;
 
     @Override
@@ -39,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity
         CreateAccountButton = (Button) findViewById(R.id.register_btn);
         InputName = (EditText) findViewById(R.id.register_username_input);
         InputPhoneNumber = (EditText) findViewById(R.id.register_phone_number_input);
-        InputPassWord = (EditText) findViewById(R.id.register_password_input);
+        InputPassword = (EditText) findViewById(R.id.register_password_input);
         loadingBar = new ProgressDialog(this);
 
         //Create account
@@ -59,18 +59,18 @@ public class RegisterActivity extends AppCompatActivity
         //get name, phone number and password of user
         String name = InputName.getText().toString();
         String phone = InputPhoneNumber.getText().toString();
-        String password = InputPassWord.getText().toString();
+        String password = InputPassword.getText().toString();
 
         //Check name field, phone number field and password field is not empty
         if(TextUtils.isEmpty(name))
         {
             Toast.makeText(this,"Veuillez saisir votre nom, s'il vous plaît", Toast.LENGTH_SHORT).show();
         }
-        if(TextUtils.isEmpty(phone))
+        else if(TextUtils.isEmpty(phone))
         {
             Toast.makeText(this,"Veuillez saisir votre numéro de téléphone, s'il vous plaît", Toast.LENGTH_SHORT).show();
         }
-        if(TextUtils.isEmpty(password))
+        else if(TextUtils.isEmpty(password))
         {
             Toast.makeText(this,"Veuillez saisir votre mot de passe, s'il vous plaît", Toast.LENGTH_SHORT).show();
         }
@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
-                if(!(dataSnapshot.child("Users").child("phone").exists()))
+                if(!(dataSnapshot.child("Users").child(phone).exists()))
                 {
                     HashMap<String, Object> userdataMap = new HashMap<>();
                     userdataMap.put("phone", phone);
