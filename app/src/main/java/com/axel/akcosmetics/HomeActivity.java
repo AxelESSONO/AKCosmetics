@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import io.paperdb.Paper;
+
 public class HomeActivity extends AppCompatActivity
 {
 
@@ -25,6 +27,8 @@ public class HomeActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+
+                Paper.book().destroy();
 
                 Intent intent = new Intent(HomeActivity.this, MainActivity.class);
                 startActivity(intent);
