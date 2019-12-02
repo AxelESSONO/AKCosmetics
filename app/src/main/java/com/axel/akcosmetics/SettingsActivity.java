@@ -156,7 +156,7 @@ public class SettingsActivity extends AppCompatActivity
         userMap.put("phoneOrder", userPhoneEditText.getText().toString());
         ref.child(Prevalent.currentOnLineUser.getPhone()).updateChildren(userMap);
 
-        startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+        startActivity(new Intent(SettingsActivity.this, HomeActivity.class));
         Toast.makeText(SettingsActivity.this, "Les modifications ont été enregistrées avec succès.", Toast.LENGTH_SHORT).show();
         finish();
 
@@ -249,7 +249,7 @@ public class SettingsActivity extends AppCompatActivity
 
                         progressDialog.dismiss();
 
-                        startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+                        startActivity(new Intent(SettingsActivity.this, HomeActivity.class));
                         Toast.makeText(SettingsActivity.this, "Les modifications ont été enregistrées avec succès.", Toast.LENGTH_SHORT).show();
                         finish();
                     }
@@ -265,7 +265,7 @@ public class SettingsActivity extends AppCompatActivity
 
         else
         {
-            Toast.makeText(this, "L'image n'a pas été slectionnée", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "L'image n'a pas été sélectionnée", Toast.LENGTH_SHORT).show();
         }
 
     }
