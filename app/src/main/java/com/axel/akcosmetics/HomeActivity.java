@@ -85,6 +85,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         userNameTextView.setText(Prevalent.currentOnLineUser.getName());
 
+        ////
+        Picasso.get().load(Prevalent.currentOnLineUser.getImage()).placeholder(R.drawable.profile).into(profileImageView);
+
 
         recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);

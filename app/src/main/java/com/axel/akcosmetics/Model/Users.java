@@ -2,14 +2,16 @@ package com.axel.akcosmetics.Model;
 
 public class Users
 {
-    private String name, phone, password, image, address;;
+    private String name,firstname, phone, password, image, address;
 
     public Users()
     {
     }
 
-    public Users(String name, String phone, String password, String image, String address) {
+    public Users(String name, String firstname, String phone, String password, String image, String address)
+    {
         this.name = name;
+        this.firstname = firstname;
         this.phone = phone;
         this.password = password;
         this.image = image;
@@ -22,6 +24,14 @@ public class Users
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
     public String getPhone() {
