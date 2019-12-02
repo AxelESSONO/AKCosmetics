@@ -10,26 +10,23 @@
     <ImageView
         android:id="@+id/app_logo"
         android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="60dp"
         android:src="@drawable/applogo"/>
 
     <TextView
         android:id="@+id/app_slogan"
-        android:layout_width="220dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="405dp"
-        android:layout_marginEnd="88dp"
-        android:text="La beauté en un clique"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="88dp"
+        android:text="La beauté en un clic"
+        android:layout_below="@id/app_logo"
+        android:layout_marginTop="10dp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:textStyle="bold|italic"/>
+
 
     <Button
         android:id="@+id/main_login_btn"
@@ -37,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="80dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/buttons"
