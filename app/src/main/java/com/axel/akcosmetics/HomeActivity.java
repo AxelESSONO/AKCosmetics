@@ -48,6 +48,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_home);
 
 
+
         ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
         Paper.init(this) ;
@@ -95,7 +96,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         recyclerView.setLayoutManager(layoutManager);
 
 
+
     }
+
 
 
     @Override
@@ -110,12 +113,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter = new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options)
         {
             @Override
-            protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull Products products)
+            protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull final Products products)
             {
                 productViewHolder.txtProductName.setText(products.getPname());
                 productViewHolder.txtProductDescription.setText(products.getDescription());
                 productViewHolder.txtProductPrice.setText("Prix = " + products.getPrice() + "Fcfa");
                 Picasso.get().load(products.getImage()).into(productViewHolder.imageView);
+
+
+                productViewHolder.itemView.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        Intent intent = new Intent(HomeActivity.this, ProductDetailsActivity.class);
+                        intent.putExtra("pid", products.getPid());
+                        startActivity(intent);
+                    }
+                });
+
+
             }
 
             @NonNull
