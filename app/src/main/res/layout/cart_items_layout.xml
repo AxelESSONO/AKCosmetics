@@ -14,6 +14,7 @@
         android:padding="20dp">
 
 
+
         <TextView
             android:id="@+id/cart_product_price"
             android:layout_width="match_parent"
