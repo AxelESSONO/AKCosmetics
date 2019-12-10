@@ -139,6 +139,9 @@ public class ProductDetailsActivity extends AppCompatActivity
     {
 
         DatabaseReference productsRef = FirebaseDatabase.getInstance().getReference().child("Products");
+
+
+
         productsRef.child(productID).addValueEventListener(new ValueEventListener()
         {
             @Override

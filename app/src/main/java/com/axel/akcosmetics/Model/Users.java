@@ -1,5 +1,7 @@
 package com.axel.akcosmetics.Model;
 
+import android.net.Uri;
+
 public class Users
 {
     private String name,firstname, phone, password, image, address;
