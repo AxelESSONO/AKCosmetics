@@ -45,6 +45,8 @@ public class CartActivity extends AppCompatActivity
     private ImageView imageView;
     private String productIdInCart = "";
 
+    private int overTotalPrice = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -64,6 +66,23 @@ public class CartActivity extends AppCompatActivity
         txtTotalAmount = (TextView) findViewById(R.id.total_price);
 
         imageView = (ImageView) findViewById(R.id.cart_product_image);
+
+
+        nextProcessBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                //txtTotalAmount.setText(String.valueOf("Le prix total est: " + overTotalPrice + " Fcfa"));
+
+                Intent intent = new Intent(CartActivity.this, ConfirmFinalOrderActivity.class);
+                intent.putExtra("Total price", String.valueOf(overTotalPrice));
+                startActivity(intent);
+                finish();
+
+            }
+        });
 
 
 
@@ -89,8 +108,16 @@ public class CartActivity extends AppCompatActivity
             {
 
                 cartViewHolder.txtProductQuantity.setText("La quantité = " + cart.getQuantity());
-                cartViewHolder.txtProductPrice.setText("Le prix est : " + cart.getPrice());
+                //cartViewHolder.txtProductPrice.setText("Le prix est : " + cart.getPrice());
                 cartViewHolder.txtProductName.setText(cart.getPname());
+
+                int oneTypeTotalTPrice = ((Integer.valueOf(cart.getPrice()))) * Integer.valueOf(cart.getQuantity());
+
+                cartViewHolder.txtProductPrice.setText("Le prix est : " + oneTypeTotalTPrice + " Fcfa");
+
+                overTotalPrice = overTotalPrice + oneTypeTotalTPrice;
+
+                txtTotalAmount.setText(String.valueOf("Le prix total est: " + overTotalPrice + " Fcfa"));
 
                 String pidTmp = getRef(i).getKey();
                 DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Products").child(pidTmp);
