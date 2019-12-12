@@ -40,7 +40,7 @@ public class CartActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private Button nextProcessBtn;
-    private TextView txtTotalAmount;
+    private TextView txtTotalAmount, txtMsg1;
     private TextView test;
     private ImageView imageView;
     private String productIdInCart = "";
@@ -64,6 +64,7 @@ public class CartActivity extends AppCompatActivity
 
         nextProcessBtn = (Button) findViewById(R.id.next_btn);
         txtTotalAmount = (TextView) findViewById(R.id.total_price);
+        txtMsg1 = (TextView) findViewById(R.id.msg1);
 
         imageView = (ImageView) findViewById(R.id.cart_product_image);
 
@@ -93,6 +94,8 @@ public class CartActivity extends AppCompatActivity
     protected void onStart()
     {
         super.onStart();
+
+        checkOrderState();
 
         final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
         FirebaseRecyclerOptions<Cart> options = new FirebaseRecyclerOptions.Builder<Cart>()
@@ -224,4 +227,58 @@ public class CartActivity extends AppCompatActivity
         adapter.startListening();
 
     }
+
+
+    private void checkOrderState()
+    {
+        DatabaseReference ordersRef;
+        ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnLineUser.getPhone());
+
+        ordersRef.addValueEventListener(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                if(dataSnapshot.exists())
+                {
+                    String shippingState = dataSnapshot.child("state").getValue().toString();
+                    String userName = dataSnapshot.child("name").getValue().toString();
+
+                    if(shippingState.equals("livrée"))
+                    {
+
+                        txtTotalAmount.setText("Cher " + userName + "\n Votre commande sera livrée ave succès.");
+                        recyclerView.setVisibility(View.GONE);
+
+                        txtMsg1.setVisibility(View.VISIBLE);
+                        txtMsg1.setText("Félicitation, votre commande est passée avec succès. Vous recevrez votre commande dans bientôt.");
+                        nextProcessBtn.setVisibility(View.GONE);
+
+                        Toast.makeText(CartActivity.this, "Vous pous acheter plus de produits, Dès vous la réception de votre commande", Toast.LENGTH_SHORT).show();
+
+                    }
+                    else if(shippingState.equals("Non livré"))
+                    {
+
+                        txtTotalAmount.setText("Etat de livraison: Non livré");
+                        recyclerView.setVisibility(View.GONE);
+
+                        txtMsg1.setVisibility(View.VISIBLE);
+                        nextProcessBtn.setVisibility(View.GONE);
+
+                        Toast.makeText(CartActivity.this, "Vous pouvez acheter plus de produits, Dès vous la réception de votre commande", Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError)
+            {
+
+            }
+        });
+    }
+
 }

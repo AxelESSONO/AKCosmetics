@@ -36,7 +36,7 @@ public class ProductDetailsActivity extends AppCompatActivity
     private ImageView productImage;
     private ElegantNumberButton numberButton;
     private TextView productPrice, productDescription, productName;
-    private String productID = "";
+    private String productID = "", state = "Normal";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -62,11 +62,27 @@ public class ProductDetailsActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                addingToCartList();
+
+                if(state.equals("Commande passée") || state.equals("Commande expédiée"))
+                {
+                    Toast.makeText(ProductDetailsActivity.this, "Vous pouvez acheter plus de produits, Dès vous votre commande sera expédiée ou confirmée", Toast.LENGTH_LONG).show();
+                }
+
+                else
+                {
+                    addingToCartList();
+                }
             }
         });
 
+    }
 
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        checkOrderState();
     }
 
     private void addingToCartList()
@@ -165,4 +181,44 @@ public class ProductDetailsActivity extends AppCompatActivity
         });
 
     }
+
+
+    private void checkOrderState()
+    {
+        DatabaseReference ordersRef;
+        ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnLineUser.getPhone());
+
+        ordersRef.addValueEventListener(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                if(dataSnapshot.exists())
+                {
+                    String shippingState = dataSnapshot.child("state").getValue().toString();
+
+                    if(shippingState.equals("livrée"))
+                    {
+
+                        state = "Commande expédiée";
+
+                    }
+                    else if(shippingState.equals("Non livré"))
+                    {
+
+                        state = "Commande passée";
+
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError)
+            {
+
+            }
+        });
+    }
+
 }
