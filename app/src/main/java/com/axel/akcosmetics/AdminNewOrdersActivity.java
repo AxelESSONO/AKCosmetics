@@ -1,10 +1,13 @@
 package com.axel.akcosmetics;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,7 +54,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity
         FirebaseRecyclerAdapter<AdminOrders, AdminOrdersViewHolder> adapter =
                 new FirebaseRecyclerAdapter<AdminOrders, AdminOrdersViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull AdminOrdersViewHolder holder, int position, @NonNull AdminOrders model)
+                    protected void onBindViewHolder(@NonNull AdminOrdersViewHolder holder, final int position, @NonNull final AdminOrders model)
                     {
 
                         holder.userName.setText("Nom: " + model.getName());
@@ -61,6 +64,53 @@ public class AdminNewOrdersActivity extends AppCompatActivity
                         holder.userDateTime.setText("Heure de la commande: " + model.getTime());
                         holder.userCity.setText("Ville: " + model.getCity());
                         holder.userQuarter.setText("Quartier: " + model.getQuarter());
+
+                        holder.showOrdersBtn.setOnClickListener(new View.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(View v)
+                            {
+                                String uId = getRef(position).getKey();
+
+                                Intent intent = new Intent(AdminNewOrdersActivity.this, AdminUserProductsActivity.class);
+                                intent.putExtra("userId", uId);
+                                startActivity(intent);
+                            }
+                        });
+
+                        holder.itemView.setOnClickListener(new View.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(View v)
+                            {
+                                CharSequence options[] = new CharSequence[]
+                                        {
+                                                "Oui",
+                                                "Non"
+                                        };
+
+                                AlertDialog.Builder builder = new AlertDialog.Builder(AdminNewOrdersActivity.this);
+                                builder.setTitle("Avez-vous expédié ce commande de ce produit?");
+                                builder.setItems(options, new DialogInterface.OnClickListener()
+                                {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i)
+                                    {
+                                        if(i == 0)
+                                        {
+                                            String uId = getRef(position).getKey();
+                                            RemoveOrder(uId);
+                                        }
+                                        else
+                                        {
+                                            finish();
+                                        }
+                                    }
+                                });
+                                builder.show();
+
+                            }
+                        });
 
                     }
 
@@ -76,6 +126,11 @@ public class AdminNewOrdersActivity extends AppCompatActivity
         orderList.setAdapter(adapter);
         adapter.startListening();
 
+    }
+
+    private void RemoveOrder(String uId)
+    {
+        ordersRef.child(uId).removeValue();
     }
 
     public static class AdminOrdersViewHolder extends RecyclerView.ViewHolder
@@ -96,8 +151,6 @@ public class AdminNewOrdersActivity extends AppCompatActivity
             userQuarter = itemView.findViewById(R.id.order_quarter);
 
             showOrdersBtn = itemView.findViewById(R.id.shom_all_products_btn);
-
-
         }
     }
 

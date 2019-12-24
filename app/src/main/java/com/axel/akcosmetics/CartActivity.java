@@ -107,16 +107,16 @@ public class CartActivity extends AppCompatActivity
         FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options)
         {
             @Override
-            protected void onBindViewHolder(@NonNull final CartViewHolder cartViewHolder, int i, @NonNull final Cart cart)
+            protected void onBindViewHolder(@NonNull final CartViewHolder holder, int i, @NonNull final Cart cart)
             {
 
-                cartViewHolder.txtProductQuantity.setText("La quantité = " + cart.getQuantity());
+                holder.txtProductQuantity.setText("La quantité = " + cart.getQuantity());
                 //cartViewHolder.txtProductPrice.setText("Le prix est : " + cart.getPrice());
-                cartViewHolder.txtProductName.setText(cart.getPname());
+                holder.txtProductName.setText(cart.getPname());
 
                 int oneTypeTotalTPrice = ((Integer.valueOf(cart.getPrice()))) * Integer.valueOf(cart.getQuantity());
 
-                cartViewHolder.txtProductPrice.setText("Le prix est : " + oneTypeTotalTPrice + " Fcfa");
+                holder.txtProductPrice.setText("Le prix est : " + oneTypeTotalTPrice + " Fcfa");
 
                 overTotalPrice = overTotalPrice + oneTypeTotalTPrice;
 
@@ -133,7 +133,7 @@ public class CartActivity extends AppCompatActivity
                         if(dataSnapshot.hasChild("image"))
                         {
                             String key = dataSnapshot.child("image").getValue().toString();
-                            Picasso.get().load(key).into(cartViewHolder.productImage);
+                            Picasso.get().load(key).into(holder.productImage);
                         }
 
                     }
@@ -146,7 +146,7 @@ public class CartActivity extends AppCompatActivity
                 });
 
 
-                cartViewHolder.itemView.setOnClickListener(new View.OnClickListener()
+                holder.itemView.setOnClickListener(new View.OnClickListener()
                 {
                     @Override
                     public void onClick(View v)
@@ -187,21 +187,15 @@ public class CartActivity extends AppCompatActivity
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task)
                                                 {
-
-
                                                     if(task.isSuccessful())
                                                     {
                                                         Toast.makeText(CartActivity.this, "Produit retiré du panier.", Toast.LENGTH_SHORT).show();
-
-
                                                         Intent intent = new Intent(CartActivity.this, HomeActivity.class);
                                                         startActivity(intent);
-
                                                     }
                                                 }
                                             });
                                 }
-
                             }
                         });
 
@@ -259,17 +253,12 @@ public class CartActivity extends AppCompatActivity
                     }
                     else if(shippingState.equals("Non livré"))
                     {
-
                         txtTotalAmount.setText("Etat de livraison: Non livré");
                         recyclerView.setVisibility(View.GONE);
-
                         txtMsg1.setVisibility(View.VISIBLE);
                         nextProcessBtn.setVisibility(View.GONE);
-
                         Toast.makeText(CartActivity.this, "Vous pouvez acheter plus de produits, Dès vous la réception de votre commande", Toast.LENGTH_SHORT).show();
-
                     }
-
                 }
             }
 
