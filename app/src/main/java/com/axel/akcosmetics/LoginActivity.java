@@ -29,7 +29,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rey.material.widget.CheckBox;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -46,10 +45,7 @@ public class LoginActivity extends AppCompatActivity
     private ProgressDialog loadingBar;
     private String parentDbName = "Users";
     private CheckBox chkBoxRememberMe;
-
     private CallbackManager callbackManager;
-
-
     private TextView AdminLink, NotAdminLink;
 
     @Override
@@ -80,8 +76,6 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onSuccess(LoginResult loginResult)
             {
-
-
             }
 
             @Override
@@ -135,10 +129,6 @@ public class LoginActivity extends AppCompatActivity
     {
         callbackManager.onActivityResult(requestCode, resultCode,data);
         super.onActivityResult(requestCode, resultCode, data);
-
-
-
-
     }
 
     AccessTokenTracker accessTokenTracker = new AccessTokenTracker()
@@ -166,14 +156,13 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onCompleted(JSONObject object, GraphResponse response)
             {
-
-                try {
+                try
+                {
                     String first_name = object.getString("first_name");
                     String last_name = object.getString("last_name");
                     String email = object.getString("email");
                     String id = object.getString("id");
                     String url = "https://graph.facebook.com/" +id+ "/picture?type=normal";
-
                 }
                 catch (JSONException e)
                 {

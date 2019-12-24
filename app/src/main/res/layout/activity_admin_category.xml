@@ -14,8 +14,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp"
-        android:text="Selectionner la catégorie du nouveau produit"
+        android:layout_marginTop="10dp"
+        android:text="Sélectionner la catégorie du nouveau produit"
         android:textColor="@color/colorPrimaryDark"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -32,7 +32,7 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp">
 
@@ -76,7 +76,7 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="45dp">
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:id="@+id/glasses"
@@ -105,7 +105,7 @@
             android:layout_height="80dp"
             android:src="@drawable/shoess"
             android:layout_marginStart="16dp"
-            />
+            android:layout_marginLeft="16dp" />
 
     </LinearLayout>
 
@@ -119,7 +119,7 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="45dp">
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:id="@+id/headphones_handfree"
@@ -151,6 +151,37 @@
             android:layout_marginLeft="16dp" />
 
     </LinearLayout>
+
+
+    <Button
+        android:id="@+id/check_orders_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/buttons"
+        android:text="Vérifier la nouvelle commande"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_above="@id/admin_logout_btn"/>
+
+    <Button
+        android:id="@+id/admin_logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/buttons"
+        android:text="Se déconnecter"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
 
 
 </RelativeLayout>
