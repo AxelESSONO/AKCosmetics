@@ -1,4 +1,4 @@
-package com.axel.akcosmetics;
+package com.axel.akcosmetics.UsualActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,11 +10,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.axel.akcosmetics.Prevalent.Prevalent;
+import com.axel.akcosmetics.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -39,6 +41,7 @@ public class SettingsActivity extends AppCompatActivity
     private CircleImageView profileImageView;
     private EditText fullNameEditText, firstNameEditText ,userPhoneEditText, addressEditText;
     private TextView profileChangeTextBtn, closeTextBtn, saveTextBtn;
+    private Button securityQuestionBtn;
     private Uri imageUri;
     private String myUrl = "";
     private StorageReference storageProfilePictureRef;
@@ -64,6 +67,7 @@ public class SettingsActivity extends AppCompatActivity
         profileChangeTextBtn = (TextView) findViewById(R.id.profile_image_change_btn);
         closeTextBtn = (TextView) findViewById(R.id.close_settings_btn);
         saveTextBtn = (TextView) findViewById(R.id.update_account_settings_btn);
+        securityQuestionBtn = (Button) findViewById(R.id.security_question_btn);
 
         userInformationDisplay(profileImageView, fullNameEditText, firstNameEditText,userPhoneEditText, addressEditText);
 
@@ -74,6 +78,17 @@ public class SettingsActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 finish();
+            }
+        });
+
+        securityQuestionBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(SettingsActivity.this, ResetPasswordActivity.class);
+                intent.putExtra("settings", "check");
+                startActivity(intent);
             }
         });
 

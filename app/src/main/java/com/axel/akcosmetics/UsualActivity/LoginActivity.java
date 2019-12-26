@@ -1,7 +1,6 @@
-package com.axel.akcosmetics;
+package com.axel.akcosmetics.UsualActivity;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -12,18 +11,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.axel.akcosmetics.Admin.AdminCategoryActivity;
 import com.axel.akcosmetics.Model.Users;
 import com.axel.akcosmetics.Prevalent.Prevalent;
+import com.axel.akcosmetics.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rey.material.widget.CheckBox;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.lang.reflect.Array;
 
 import io.paperdb.Paper;
 
@@ -37,7 +35,7 @@ public class LoginActivity extends AppCompatActivity
     private String parentDbName = "Users";
     private CheckBox chkBoxRememberMe;
     //private CallbackManager callbackManager;
-    private TextView AdminLink, NotAdminLink;
+    private TextView AdminLink, NotAdminLink, ForgetPassWord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -51,7 +49,7 @@ public class LoginActivity extends AppCompatActivity
 
         AdminLink = (TextView) findViewById(R.id.admin_panel_link);
         NotAdminLink = (TextView) findViewById(R.id.not_admin_panel_link);
-        //callbackManager = CallbackManager.Factory.create();
+        ForgetPassWord = (TextView) findViewById(R.id.forget_password_link);
 
 
         loadingBar = new ProgressDialog(this);
@@ -66,6 +64,16 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 LoginUser();
+            }
+        });
+
+        ForgetPassWord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(LoginActivity.this, ResetPasswordActivity.class);
+                intent.putExtra("login", "check");
+                startActivity(intent);
             }
         });
 

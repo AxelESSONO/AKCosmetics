@@ -1,4 +1,4 @@
-package com.axel.akcosmetics;
+package com.axel.akcosmetics.UsualActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,14 +18,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.axel.akcosmetics.Admin.AdminMaintainProductsActivity;
 import com.axel.akcosmetics.Model.Products;
 import com.axel.akcosmetics.Prevalent.Prevalent;
+import com.axel.akcosmetics.R;
 import com.axel.akcosmetics.ViewHold.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;

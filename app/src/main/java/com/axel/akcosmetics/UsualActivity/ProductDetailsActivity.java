@@ -1,4 +1,4 @@
-package com.axel.akcosmetics;
+package com.axel.akcosmetics.UsualActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,10 +13,10 @@ import android.widget.Toast;
 
 import com.axel.akcosmetics.Model.Products;
 import com.axel.akcosmetics.Prevalent.Prevalent;
+import com.axel.akcosmetics.R;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

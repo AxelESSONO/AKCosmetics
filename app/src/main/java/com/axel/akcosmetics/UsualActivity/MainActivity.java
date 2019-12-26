@@ -1,4 +1,4 @@
-package com.axel.akcosmetics;
+package com.axel.akcosmetics.UsualActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.axel.akcosmetics.Model.Users;
 import com.axel.akcosmetics.Prevalent.Prevalent;
+import com.axel.akcosmetics.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

@@ -1,4 +1,4 @@
-package com.axel.akcosmetics;
+package com.axel.akcosmetics.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.axel.akcosmetics.UsualActivity.HomeActivity;
+import com.axel.akcosmetics.UsualActivity.MainActivity;
+import com.axel.akcosmetics.R;
 
 public class AdminCategoryActivity extends AppCompatActivity
 {
