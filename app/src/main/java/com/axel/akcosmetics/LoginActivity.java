@@ -14,15 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.axel.akcosmetics.Model.Users;
 import com.axel.akcosmetics.Prevalent.Prevalent;
-import com.facebook.AccessToken;
-import com.facebook.AccessTokenTracker;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,11 +32,11 @@ public class LoginActivity extends AppCompatActivity
 
     private EditText InputPhoneNumber, InputPassword;
     private Button LoginButton;
-    private com.facebook.login.widget.LoginButton loginFacebookButton;
+    //private com.facebook.login.widget.LoginButton loginFacebookButton;
     private ProgressDialog loadingBar;
     private String parentDbName = "Users";
     private CheckBox chkBoxRememberMe;
-    private CallbackManager callbackManager;
+    //private CallbackManager callbackManager;
     private TextView AdminLink, NotAdminLink;
 
     @Override
@@ -57,12 +48,10 @@ public class LoginActivity extends AppCompatActivity
         InputPhoneNumber = (EditText) findViewById(R.id.login_phone_number_input);
         InputPassword = (EditText) findViewById(R.id.login_password_input);
         LoginButton = (Button) findViewById(R.id.login_btn);
-        loginFacebookButton = (com.facebook.login.widget.LoginButton) findViewById(R.id.login_button_facebook);
 
         AdminLink = (TextView) findViewById(R.id.admin_panel_link);
         NotAdminLink = (TextView) findViewById(R.id.not_admin_panel_link);
-        callbackManager = CallbackManager.Factory.create();
-        loginFacebookButton.setPermissions();
+        //callbackManager = CallbackManager.Factory.create();
 
 
         loadingBar = new ProgressDialog(this);
@@ -71,25 +60,6 @@ public class LoginActivity extends AppCompatActivity
         Paper.init(this);
 
 
-        loginFacebookButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>()
-        {
-            @Override
-            public void onSuccess(LoginResult loginResult)
-            {
-            }
-
-            @Override
-            public void onCancel()
-            {
-
-            }
-
-            @Override
-            public void onError(FacebookException error)
-            {
-
-            }
-        });
 
         LoginButton.setOnClickListener(new View.OnClickListener()
         {
@@ -124,61 +94,6 @@ public class LoginActivity extends AppCompatActivity
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
-    {
-        callbackManager.onActivityResult(requestCode, resultCode,data);
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    AccessTokenTracker accessTokenTracker = new AccessTokenTracker()
-    {
-        @Override
-        protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken)
-        {
-            if(currentAccessToken == null)
-            {
-                Toast.makeText(LoginActivity.this, "Vous êtes déconnectés.", Toast.LENGTH_SHORT).show();
-            }
-            else
-            {
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
-        }
-    };
-
-    private void loaduserProfile(AccessToken newAccessToken)
-    {
-
-        GraphRequest request = GraphRequest.newMeRequest(newAccessToken, new GraphRequest.GraphJSONObjectCallback()
-        {
-            @Override
-            public void onCompleted(JSONObject object, GraphResponse response)
-            {
-                try
-                {
-                    String first_name = object.getString("first_name");
-                    String last_name = object.getString("last_name");
-                    String email = object.getString("email");
-                    String id = object.getString("id");
-                    String url = "https://graph.facebook.com/" +id+ "/picture?type=normal";
-                }
-                catch (JSONException e)
-                {
-                    e.printStackTrace();
-                }
-
-            }
-        });
-
-        Bundle parameters = new Bundle();
-        parameters.putString("fields", "firs_name, last_name, email, id");
-        request.setParameters(parameters);
-        request.executeAsync();
-
-    }
-
     private void LoginUser()
     {
         String phone = InputPhoneNumber.getText().toString();
@@ -200,12 +115,12 @@ public class LoginActivity extends AppCompatActivity
              loadingBar.setCanceledOnTouchOutside(false);
              loadingBar.show();
 
-             AllowAccesToAccount(phone,password);
+             AllowAccessToAccount(phone,password);
          }
 
     }
 
-    private void AllowAccesToAccount(final String phone, final String password)
+    private void AllowAccessToAccount(final String phone, final String password)
     {
 
         if(chkBoxRememberMe.isChecked())
