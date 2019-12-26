@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity
     private String parentDbName = "Users";
     private CheckBox chkBoxRememberMe;
     //private CallbackManager callbackManager;
-    private TextView AdminLink, NotAdminLink, ForgetPassWord;
+    private TextView AdminLink, NotAdminLink, ForgetPassWordLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity
 
         AdminLink = (TextView) findViewById(R.id.admin_panel_link);
         NotAdminLink = (TextView) findViewById(R.id.not_admin_panel_link);
-        ForgetPassWord = (TextView) findViewById(R.id.forget_password_link);
+        ForgetPassWordLink = (TextView) findViewById(R.id.forget_password_link);
 
 
         loadingBar = new ProgressDialog(this);
@@ -67,12 +67,12 @@ public class LoginActivity extends AppCompatActivity
             }
         });
 
-        ForgetPassWord.setOnClickListener(new View.OnClickListener() {
+        ForgetPassWordLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
                 Intent intent = new Intent(LoginActivity.this, ResetPasswordActivity.class);
-                intent.putExtra("login", "check");
+                intent.putExtra("check", "login");
                 startActivity(intent);
             }
         });
