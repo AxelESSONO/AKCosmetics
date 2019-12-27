@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Sellers.SellerLoginActivity">
+
+    <ImageView
+        android:id="@+id/login_img_seller"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/seller_login1"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/login_title_seller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Se connecter en tant que vendeur"
+        android:gravity="center"
+        android:layout_below="@id/login_img_seller"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_green_dark"/>
+
+    <EditText
+        android:id="@+id/login_seller_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/login_title_seller"
+        android:hint="Votre numéro de téléphone..."
+        android:inputType="number"
+        android:textSize="15dp"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/login_seller_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/login_seller_phone"
+        android:hint="Votre mot de passe..."
+        android:inputType="textPassword"
+        android:textSize="15dp"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/login_seller_already_account_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/holo_green_dark"
+        android:text="Connexion commerçant"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="@android:color/white"/>
+
+
+</RelativeLayout>

@@ -1,25 +1,24 @@
-package com.axel.akcosmetics.UsualActivity;
+package com.axel.akcosmetics.Buyers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import com.axel.akcosmetics.Model.Users;
 import com.axel.akcosmetics.Prevalent.Prevalent;
 import com.axel.akcosmetics.R;
+import com.axel.akcosmetics.Sellers.SellerRegistrationActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity
@@ -27,6 +26,7 @@ public class MainActivity extends AppCompatActivity
 
     private Button joinNowButton, longinButton;
     private ProgressDialog loadingBar;
+    private TextView sellerBegin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity
 
         joinNowButton = (Button) findViewById(R.id.main_join_now_btn);
         longinButton = (Button) findViewById(R.id.main_login_btn);
+        sellerBegin = (TextView) findViewById(R.id.seller_begin);
 
         loadingBar = new ProgressDialog(this);
 
@@ -48,6 +49,17 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //On click on seller begin TextView
+        sellerBegin.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(MainActivity.this, SellerRegistrationActivity.class);
                 startActivity(intent);
             }
         });

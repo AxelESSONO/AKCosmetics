@@ -1,4 +1,4 @@
-package com.axel.akcosmetics.UsualActivity;
+package com.axel.akcosmetics.Buyers;
 
 import android.content.Intent;
 import android.os.Bundle;

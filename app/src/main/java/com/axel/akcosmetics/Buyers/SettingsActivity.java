@@ -1,4 +1,4 @@
-package com.axel.akcosmetics.UsualActivity;
+package com.axel.akcosmetics.Buyers;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

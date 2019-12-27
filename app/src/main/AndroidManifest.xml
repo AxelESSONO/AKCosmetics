@@ -15,24 +15,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".UsualActivity.ResetPasswordActivity"></activity>
+        <activity android:name=".Sellers.SellerLoginActivity"></activity>
+        <activity android:name=".Sellers.SellerRegistrationActivity" />
+        <activity android:name=".Buyers.ResetPasswordActivity" />
         <activity android:name=".Admin.AdminMaintainProductsActivity" />
-        <activity android:name=".UsualActivity.SearchProductsActivity" />
+        <activity android:name=".Buyers.SearchProductsActivity" />
         <activity android:name=".Admin.AdminUserProductsActivity" />
         <activity android:name=".Admin.AdminNewOrdersActivity" />
-        <activity android:name=".UsualActivity.ConfirmFinalOrderActivity" />
-        <activity android:name=".UsualActivity.CartActivity" />
-        <activity android:name=".UsualActivity.ProductDetailsActivity" />
-        <activity android:name=".UsualActivity.SettingsActivity" />
+        <activity android:name=".Buyers.ConfirmFinalOrderActivity" />
+        <activity android:name=".Buyers.CartActivity" />
+        <activity android:name=".Buyers.ProductDetailsActivity" />
+        <activity android:name=".Buyers.SettingsActivity" />
         <activity
-            android:name=".UsualActivity.HomeActivity"
+            android:name=".Buyers.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Admin.AdminCategoryActivity" />
         <activity android:name=".Admin.AdminAddNewProductActivity" />
-        <activity android:name=".UsualActivity.RegisterActivity" />
-        <activity android:name=".UsualActivity.LoginActivity" />
-        <activity android:name=".UsualActivity.MainActivity">
+        <activity android:name=".Buyers.RegisterActivity" />
+        <activity android:name=".Buyers.LoginActivity" />
+        <activity android:name=".Buyers.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

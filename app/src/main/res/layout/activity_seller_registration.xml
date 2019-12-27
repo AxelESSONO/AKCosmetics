@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Sellers.SellerRegistrationActivity">
+
+    <ImageView
+        android:id="@+id/img_seller"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:src="@drawable/seller"
+        android:scaleType="centerCrop"/>
+    <LinearLayout
+        android:id="@+id/linear_layout_seller_registration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_seller"
+        android:layout_above="@id/seller_register_btn"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_seller"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_below="@id/img_seller"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="Inscription en tant que vendeur"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+
+        <EditText
+            android:id="@+id/seller_name"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_below="@id/title_seller"
+            android:hint="Votre nom..."
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+
+        <EditText
+            android:id="@+id/seller_phone"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_below="@id/seller_name"
+            android:hint="Votre numéro de téléphone..."
+            android:inputType="number"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+
+
+
+        <EditText
+            android:id="@+id/seller_password"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_below="@id/seller_phone"
+            android:hint="Votre mot de passe..."
+            android:inputType="textPassword"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+
+
+        <EditText
+            android:id="@+id/seller_province"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_below="@id/seller_password"
+            android:hint="Votre province de résidence..."
+            android:inputType="text"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+
+        <EditText
+            android:id="@+id/seller_city"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_below="@id/seller_province"
+            android:hint="Votre ville de résidence..."
+            android:inputType="text"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+        <EditText
+            android:id="@+id/seller_quarter"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_below="@id/seller_city"
+            android:hint="Votre quartier..."
+            android:inputType="text"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/seller_register_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@id/seller_already_account_btn"
+        android:background="@android:color/holo_green_dark"
+        android:text="S'inscrire"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/seller_already_account_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/holo_green_dark"
+        android:text="Déjà abonné? Connectez-vous"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="@android:color/white"/>
+
+
+</RelativeLayout>

@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.axel.akcosmetics.UsualActivity.HomeActivity;
-import com.axel.akcosmetics.UsualActivity.MainActivity;
+import com.axel.akcosmetics.Buyers.HomeActivity;
+import com.axel.akcosmetics.Buyers.MainActivity;
 import com.axel.akcosmetics.R;
 
 public class AdminCategoryActivity extends AppCompatActivity
