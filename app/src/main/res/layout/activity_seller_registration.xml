@@ -11,8 +11,9 @@
         android:id="@+id/img_seller"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:src="@drawable/seller"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/boutique_en_ligne" />
+
     <LinearLayout
         android:id="@+id/linear_layout_seller_registration"
         android:layout_width="match_parent"
@@ -35,8 +36,8 @@
             android:layout_marginBottom="5dp"
             android:gravity="center"
             android:text="Inscription en tant que vendeur"
-            android:textColor="@android:color/holo_green_dark"
-            android:textSize="18dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:padding="5dp"
             android:layout_margin="5dp"/>
@@ -131,7 +132,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginBottom="5dp"
         android:layout_above="@id/seller_already_account_btn"
-        android:background="@android:color/holo_green_dark"
+        android:background="@drawable/buttons"
         android:text="S'inscrire"
         android:textAllCaps="false"
         android:textStyle="bold"
@@ -146,7 +147,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginBottom="5dp"
         android:layout_alignParentBottom="true"
-        android:background="@android:color/holo_green_dark"
+        android:background="@drawable/buttons"
         android:text="Déjà abonné? Connectez-vous"
         android:textAllCaps="false"
         android:textStyle="bold"
