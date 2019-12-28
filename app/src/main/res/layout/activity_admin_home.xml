@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin.AdminHomeActivity">
+
+    <TextView
+        android:id="@+id/admin_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bienvenue cher administrateur"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+       android:id="@+id/maintain_btn"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="5dp"
+       android:layout_marginRight="5dp"
+       android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+       android:background="@drawable/buttons"
+       android:text="Maintenir le produit"
+       android:textAllCaps="false"
+       android:textColor="@android:color/white"
+       android:textStyle="bold"
+       android:textSize="20dp"
+       android:layout_below="@id/admin_welcome"/>
+
+
+   <Button
+       android:id="@+id/check_orders_btn"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="5dp"
+       android:layout_marginRight="5dp"
+       android:layout_marginBottom="10dp"
+       android:background="@drawable/buttons"
+       android:text="Vérifier la nouvelle commande"
+       android:textAllCaps="false"
+       android:textColor="@android:color/white"
+       android:textStyle="bold"
+       android:textSize="20dp"
+       android:layout_below="@id/maintain_btn"/>
+
+    <Button
+        android:id="@+id/check_approved_orders_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/buttons"
+        android:text="Vérifier et valider les nouveaux produits"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_below="@id/check_orders_btn"/>
+
+   <Button
+       android:id="@+id/admin_logout_btn"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       android:layout_marginLeft="5dp"
+       android:layout_marginRight="5dp"
+       android:layout_marginBottom="20dp"
+       android:background="@drawable/buttons"
+       android:text="Se déconnecter"
+       android:textAllCaps="false"
+       android:textColor="@android:color/white"
+       android:textStyle="bold"
+       android:textSize="20dp"/>
+
+</RelativeLayout>

@@ -12,7 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.axel.akcosmetics.Admin.SellerProductCategoryActivity;
+import com.axel.akcosmetics.Admin.AdminHomeActivity;
+import com.axel.akcosmetics.Sellers.SellerProductCategoryActivity;
 import com.axel.akcosmetics.Model.Users;
 import com.axel.akcosmetics.Prevalent.Prevalent;
 import com.axel.akcosmetics.R;
@@ -158,7 +159,7 @@ public class LoginActivity extends AppCompatActivity
                                 Toast.makeText(LoginActivity.this, "Vous êtes désormais connecté", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                                Intent intent = new Intent(LoginActivity.this, SellerProductCategoryActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
                                 startActivity(intent);
 
                             }

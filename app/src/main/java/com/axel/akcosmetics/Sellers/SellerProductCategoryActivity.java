@@ -1,4 +1,4 @@
-package com.axel.akcosmetics.Admin;
+package com.axel.akcosmetics.Sellers;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.axel.akcosmetics.R;
-import com.axel.akcosmetics.Sellers.SellerAddNewProductActivity;
 
 public class SellerProductCategoryActivity extends AppCompatActivity
 {
@@ -21,7 +20,7 @@ public class SellerProductCategoryActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seller_add_category);
+        setContentView(R.layout.activity_seller_product_category);
 
         /*logoutBtn = (Button) findViewById(R.id.admin_logout_btn);
         checkOrdersBtn = (Button) findViewById(R.id.check_orders_btn);
@@ -42,41 +41,7 @@ public class SellerProductCategoryActivity extends AppCompatActivity
         watches = (ImageView) findViewById(R.id.watches);
         mobilePhones = (ImageView) findViewById(R.id.mobilephones);
 
-/*        maintainProductBtn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(SellerProductCategoryActivity.this, HomeActivity.class);
-                intent.putExtra("Admin", "Admin");
-                startActivity(intent);
-            }
-        });
 
-        logoutBtn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(SellerProductCategoryActivity.this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-
-        checkOrdersBtn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-
-                Intent intent = new Intent(SellerProductCategoryActivity.this, AdminNewOrdersActivity.class);
-                startActivity(intent);
-
-            }
-        });*/
 
 
 

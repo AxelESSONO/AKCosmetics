@@ -16,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.axel.akcosmetics.Admin.SellerProductCategoryActivity;
 import com.axel.akcosmetics.Prevalent.Prevalent;
 import com.axel.akcosmetics.R;
 import com.google.android.gms.tasks.Continuation;
@@ -24,7 +23,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
