@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.AdminAddNewProductActivity">
+    tools:context=".Sellers.SellerAddNewProductActivity">
 
 
     <TextView
@@ -25,10 +25,10 @@
         android:layout_below="@id/category_selected"
         android:cropToPadding="false"
         android:scaleType="centerCrop"
-        android:src="@drawable/select_product_image"
+        android:src="@drawable/photo_camera_icon"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        />
+        android:padding="10dp"/>
 
 
     <EditText
@@ -38,7 +38,7 @@
         android:layout_below="@+id/select_product_image"
         android:inputType="text"
         android:layout_marginTop="20dp"
-        android:padding="20dp"
+        android:padding="10dp"
         android:hint="Nom du produit"
         android:textAlignment="center"
         android:layout_marginLeft="45dp"
@@ -54,7 +54,7 @@
         android:layout_below="@+id/product_name"
         android:inputType="text"
         android:layout_marginTop="6dp"
-        android:padding="20dp"
+        android:padding="10dp"
         android:hint="Descriptionn du produit"
         android:textAlignment="center"
         android:layout_marginLeft="45dp"
@@ -70,7 +70,7 @@
         android:layout_below="@+id/product_description"
         android:inputType="number"
         android:layout_marginTop="6dp"
-        android:padding="20dp"
+        android:padding="10dp"
         android:hint="Prix du produit"
         android:textAlignment="center"
         android:layout_marginLeft="45dp"
@@ -88,7 +88,7 @@
         android:textAlignment="center"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
-        android:padding="17dp"
+        android:padding="10dp"
         android:layout_marginTop="20dp"
         android:textSize="18sp"
         android:textAllCaps="false"

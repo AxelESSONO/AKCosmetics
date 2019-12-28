@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.AdminCategoryActivity">
+    tools:context=".Admin.SellerProductCategoryActivity">
 
     <TextView
         android:id="@+id/slogan_category"
@@ -32,7 +32,7 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="100dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp">
 
@@ -153,7 +153,7 @@
     </LinearLayout>
 
 
-    <Button
+    <!--<Button
         android:id="@+id/maintain_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -198,6 +198,6 @@
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:textSize="20dp"/>
-
+-->
 
 </RelativeLayout>
