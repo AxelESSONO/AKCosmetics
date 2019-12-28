@@ -52,8 +52,50 @@
         android:textSize="15dp"
         android:layout_marginTop="20dp"/>
 
+
+    <LinearLayout
+        android:id="@+id/linear_layout_seller_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/login_seller_password"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp">
+
+        <com.rey.material.widget.CheckBox
+            android:id="@+id/remember_me_login_chk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/Material.Drawable.CheckBox"
+            android:text="Se souvenir de moi?"
+            android:textColor="@color/colorPrimaryDark"
+            app:cbd_strokeColor="@color/colorPrimaryDark"
+            android:gravity="center_vertical"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/forget_password_link"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mot de passe oublié?"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center_vertical"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            tools:ignore="RtlCompat"/>
+
+    </LinearLayout>
+
+
     <Button
-        android:id="@+id/login_seller_already_account_btn"
+        android:id="@+id/login_seller_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
