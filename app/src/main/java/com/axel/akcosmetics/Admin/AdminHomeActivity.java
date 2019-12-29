@@ -68,7 +68,7 @@ public class AdminHomeActivity extends AppCompatActivity
             public void onClick(View v)
             {
 
-                Intent intent = new Intent(AdminHomeActivity.this, AdminNewOrdersActivity.class);
+                Intent intent = new Intent(AdminHomeActivity.this, AdminCheckNewProductsActivity.class);
                 startActivity(intent);
             }
         });
