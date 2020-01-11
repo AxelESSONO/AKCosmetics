@@ -1,8 +1,5 @@
 package com.axel.akcosmetics.Buyers;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +7,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.axel.akcosmetics.Model.Products;
 import com.axel.akcosmetics.Prevalent.Prevalent;
@@ -87,10 +87,7 @@ public class ProductDetailsActivity extends AppCompatActivity
 
     private void addingToCartList()
     {
-
-
         String saveCurrentDate, saveCurrentTime;
-
         // get date and time
         Calendar calForDate = Calendar.getInstance();
         SimpleDateFormat currentDate = new SimpleDateFormat("dd MMM yyyy ");
@@ -121,8 +118,6 @@ public class ProductDetailsActivity extends AppCompatActivity
 
                         if(task.isSuccessful())
                         {
-
-
                             cartListRef.child("Admin View").child(Prevalent.currentOnLineUser.getPhone())
                                     .child("Products").child(productID)
                                     .updateChildren(cartMap)
@@ -135,19 +130,14 @@ public class ProductDetailsActivity extends AppCompatActivity
                                             if(task.isSuccessful())
                                             {
                                                 Toast.makeText(ProductDetailsActivity.this, "Produit ajouté au panier.", Toast.LENGTH_SHORT).show();
-
                                                 Intent intent = new Intent(ProductDetailsActivity.this, HomeActivity.class);
                                                 startActivity(intent);
                                             }
-
                                         }
                                     });
-
                         }
-
                     }
                 });
-
     }
 
 
@@ -175,9 +165,7 @@ public class ProductDetailsActivity extends AppCompatActivity
 
             @Override
             public void onCancelled(DatabaseError databaseError)
-            {
-
-            }
+            { }
         });
 
     }
@@ -205,9 +193,7 @@ public class ProductDetailsActivity extends AppCompatActivity
                     }
                     else if(shippingState.equals("Non livré"))
                     {
-
                         state = "Commande passée";
-
                     }
 
                 }
@@ -215,9 +201,7 @@ public class ProductDetailsActivity extends AppCompatActivity
 
             @Override
             public void onCancelled(DatabaseError databaseError)
-            {
-
-            }
+            { }
         });
     }
 

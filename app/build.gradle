@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.axel.akcosmetics"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -28,9 +28,7 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-core:11.8.0'
     implementation 'com.google.firebase:firebase-database:11.8.0'
-
     implementation 'com.google.firebase:firebase-auth:11.8.0'
-
     implementation 'com.google.firebase:firebase-storage:11.8.0'
     implementation 'com.firebaseui:firebase-ui-database:3.2.2'
 
@@ -56,12 +54,28 @@ dependencies {
 
 
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
-
     implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
+
+//  new
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    //implementation 'com.onesignal:OneSignal:3.11.2'
+    implementation 'com.karumi:dexter:4.2.0'
+    implementation 'com.balysv:material-ripple:1.0.2'
+
+
+    implementation 'com.github.jd-alexander:LikeButton:0.2.3'
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+
+    implementation 'com.romellfudi.permission:fudi-permission:1.0.a'
+    implementation 'com.romellfudi.ussdlibrary:ussd-library:1.0.a'
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
 }
 
 apply plugin: 'com.google.gms.google-services'

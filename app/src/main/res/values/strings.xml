@@ -16,12 +16,29 @@
     <string name="menu_send">Send</string>
 
 
+    <string name="close">Fermer</string>
+    <string name="open">Ouvrir</string>
+    <string name="title_favourites">Favourites</string>
+
+
     <string name="facebook_app_id">2653535781372932</string>
     <string name="fb_login_protocol_scheme">fb2653535781372932</string>
     <string name="title_activity_seller_home">SellerHomeActivity</string>
     <string name="title_home">Acceuil</string>
     <string name="title_dashboard">Ajouter</string>
     <string name="title_notifications">Se déconnecter</string>
+    <string name="title_activity_checkout">CheckoutActivity</string>
+    <string name="tab_text_1">Livraison</string>
+    <string name="tab_text_2">Paiement</string>
+    <string name="tab_text_3">Confirmation</string>
+    <string name="title_product_detail">Product Detail</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="empty_cart">Oups! Votre panier est vide</string>
+    <string name="title_activity_buyers_home">BuyersHomeActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_product_grid">ProductGridActivity</string>
 
 
 </resources>

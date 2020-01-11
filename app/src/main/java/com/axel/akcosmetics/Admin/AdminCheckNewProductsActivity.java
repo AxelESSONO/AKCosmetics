@@ -3,6 +3,7 @@ package com.axel.akcosmetics.Admin;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,8 +42,10 @@ public class AdminCheckNewProductsActivity extends AppCompatActivity
 
         recyclerView = (RecyclerView) findViewById(R.id.admin_product_check_list);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
+        //layoutManager = new LinearLayoutManager(this);
+        //recyclerView.setLayoutManager(layoutManager);
+
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
     }
 
     @Override
@@ -60,10 +63,9 @@ public class AdminCheckNewProductsActivity extends AppCompatActivity
                     @Override
                     protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Products model)
                     {
-
                         holder.txtProductName.setText(model.getPname());
                         holder.txtProductDescription.setText(model.getDescription());
-                        holder.txtProductPrice.setText("Prix = " + model.getPrice() + "Fcfa");
+                        holder.txtProductPrice.setText(model.getPrice() + "Fcfa");
                         Picasso.get().load(model.getImage()).into(holder.imageView);
 
                         holder.itemView.setOnClickListener(new View.OnClickListener()

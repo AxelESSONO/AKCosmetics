@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AKCosmeticsTheme"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Buyers.HomeActivity">
+
+    <androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/vp_slider_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:focusableInTouchMode="true">
+
+                </androidx.viewpager.widget.ViewPager>
+
+                <!--START OF DOTS CONATAINER-->
+                <LinearLayout
+                    android:id="@+id/layout_slider_main_dots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_x"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/fab_margin_half">
+
+                </LinearLayout>
+                <!--END OF DOTS CONATAINER-->
+            </RelativeLayout>
+
+            <!--START OF CATEGORY RECYCLERVIEW-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/fab_margin_half"
+                android:layout_marginLeft="@dimen/fab_margin_half"
+                android:layout_marginTop="@dimen/recylerview_margin_y"
+                android:text="@string/category_popular"
+                android:textSize="@dimen/heading_mideum" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_product_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/recylerview_margin_x"
+                android:layout_marginRight="@dimen/recylerview_margin_x">
+            </androidx.recyclerview.widget.RecyclerView>
+            <!--END OF CATEGORY RECYCLERVIEW-->
+
+            <!--START OF POPULAR PRODUCT SLIDER-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/fab_margin_half"
+                android:layout_marginLeft="@dimen/fab_margin_half"
+                android:layout_marginTop="@dimen/fab_margin_half"
+                android:text="@string/popular_product"
+                android:textSize="@dimen/heading_mideum" />
+            
+            
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_popular_products"
+                android:layout_width="wrap_content"
+                android:layout_height="240dp"
+                android:layout_marginLeft="@dimen/recylerview_margin_x"
+                android:layout_marginRight="@dimen/recylerview_margin_x">
+
+
+            </androidx.viewpager.widget.ViewPager>
+            <!--END OF POPULAR PRODUCT SLIDER-->
+
+            <!--START OF RECENT PRODUCT GRID RECYLERVIEW-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/fab_margin_half"
+                android:layout_marginLeft="@dimen/fab_margin_half"
+                android:layout_marginTop="@dimen/fab_margin_half"
+                android:text="@string/recent_product"
+                android:textSize="@dimen/heading_mideum" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_p_detail_product_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/recylerview_margin_y"
+                android:layout_marginLeft="@dimen/recylerview_margin_x"
+                android:layout_marginRight="@dimen/recylerview_margin_x">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <!--END OF RECENT PRODUCT GRID RECYLERVIEW-->
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

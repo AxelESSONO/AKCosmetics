@@ -38,13 +38,14 @@ public class CartActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private Button nextProcessBtn;
-    private TextView txtTotalAmount, txtMsg1;
+    private TextView txtTotalAmount;// txtMsg1;
     private TextView test;
     private ImageView imageView;
     private String productIdInCart = "";
+    private Button continueBtn;
 
     private int overTotalPrice = 0;
-
+    View lyt_empty_cart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -55,6 +56,9 @@ public class CartActivity extends AppCompatActivity
         productIdInCart = getIntent().getStringExtra("pid");
 
         recyclerView = (RecyclerView) findViewById(R.id.cart_list);
+        lyt_empty_cart = findViewById(R.id.lyt_empty_history);
+        continueBtn = (Button) findViewById(R.id.btn_continue);
+
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -62,7 +66,7 @@ public class CartActivity extends AppCompatActivity
 
         nextProcessBtn = (Button) findViewById(R.id.next_btn);
         txtTotalAmount = (TextView) findViewById(R.id.total_price);
-        txtMsg1 = (TextView) findViewById(R.id.msg1);
+        //txtMsg1 = (TextView) findViewById(R.id.msg1);
 
         imageView = (ImageView) findViewById(R.id.cart_product_image);
 
@@ -73,17 +77,12 @@ public class CartActivity extends AppCompatActivity
             public void onClick(View v)
             {
 
-                //txtTotalAmount.setText(String.valueOf("Le prix total est: " + overTotalPrice + " Fcfa"));
-
-                Intent intent = new Intent(CartActivity.this, ConfirmFinalOrderActivity.class);
+                Intent intent = new Intent(CartActivity.this, CheckoutActivity.class);
                 intent.putExtra("Total price", String.valueOf(overTotalPrice));
                 startActivity(intent);
                 finish();
-
             }
         });
-
-
 
     }
 
@@ -120,6 +119,8 @@ public class CartActivity extends AppCompatActivity
 
                 txtTotalAmount.setText(String.valueOf("Le prix total est: " + overTotalPrice + " Fcfa"));
 
+               // Toast.makeText(CartActivity.this, "ooooooooooooooooo: " + txtTotalAmount.getText().toString(), Toast.LENGTH_SHORT).show();
+
                 String pidTmp = getRef(i).getKey();
                 DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Products").child(pidTmp);
 
@@ -133,14 +134,11 @@ public class CartActivity extends AppCompatActivity
                             String key = dataSnapshot.child("image").getValue().toString();
                             Picasso.get().load(key).into(holder.productImage);
                         }
-
                     }
 
                     @Override
                     public void onCancelled(DatabaseError databaseError)
-                    {
-
-                    }
+                    { }
                 });
 
 
@@ -149,7 +147,6 @@ public class CartActivity extends AppCompatActivity
                     @Override
                     public void onClick(View v)
                     {
-
                         CharSequence options[] = new CharSequence[]
                                 {
                                         "Modifier",
@@ -239,32 +236,29 @@ public class CartActivity extends AppCompatActivity
                     if(shippingState.equals("livrée"))
                     {
 
-                        txtTotalAmount.setText("Cher " + userName + "\n Votre commande sera livrée ave succès.");
-                        recyclerView.setVisibility(View.GONE);
+                        txtTotalAmount.setText("Cher " + userName + "\n Votre commande sera livrée avec succès.");
+                        //recyclerView.setVisibility(View.GONE);
 
-                        txtMsg1.setVisibility(View.VISIBLE);
-                        txtMsg1.setText("Félicitation, votre commande est passée avec succès. Vous recevrez votre commande dans bientôt.");
-                        nextProcessBtn.setVisibility(View.GONE);
+                        //txtMsg1.setVisibility(View.VISIBLE);
+                       //txtMsg1.setText("Félicitation, votre commande est passée avec succès. Vous recevrez votre commande dans bientôt.");
+                        //nextProcessBtn.setVisibility(View.GONE);
 
-                        Toast.makeText(CartActivity.this, "Vous pous acheter plus de produits, Dès vous la réception de votre commande", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CartActivity.this, "Merci de votre achat", Toast.LENGTH_SHORT).show();
 
                     }
                     else if(shippingState.equals("Non livré"))
                     {
                         txtTotalAmount.setText("Etat de livraison: Non livré");
-                        recyclerView.setVisibility(View.GONE);
-                        txtMsg1.setVisibility(View.VISIBLE);
-                        nextProcessBtn.setVisibility(View.GONE);
-                        Toast.makeText(CartActivity.this, "Vous pouvez acheter plus de produits, Dès vous la réception de votre commande", Toast.LENGTH_SHORT).show();
+                        //recyclerView.setVisibility(View.GONE);
+                        //txtMsg1.setVisibility(View.VISIBLE);
+                        //nextProcessBtn.setVisibility(View.GONE);
                     }
                 }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError)
-            {
-
-            }
+            { }
         });
     }
 

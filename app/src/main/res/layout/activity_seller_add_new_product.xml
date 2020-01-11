@@ -55,7 +55,7 @@
         android:inputType="text"
         android:layout_marginTop="6dp"
         android:padding="10dp"
-        android:hint="Descriptionn du produit"
+        android:hint="Description du produit"
         android:textAlignment="center"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"

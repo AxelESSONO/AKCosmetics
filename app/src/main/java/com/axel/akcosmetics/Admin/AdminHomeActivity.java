@@ -20,7 +20,6 @@ public class AdminHomeActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_home);
 
-
         logoutBtn = (Button) findViewById(R.id.admin_logout_btn);
         checkOrdersBtn = (Button) findViewById(R.id.check_orders_btn);
         maintainProductBtn = (Button) findViewById(R.id.maintain_btn);

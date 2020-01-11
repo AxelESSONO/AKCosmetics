@@ -1,15 +1,13 @@
 package com.axel.akcosmetics.Buyers;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
 import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
-import android.widget.ProgressBar;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.axel.akcosmetics.R;
 
@@ -17,8 +15,51 @@ public class SplashActivity extends AppCompatActivity
 {
 
 
+    private TextView EntrepriseName, EntrepriseSlogan, EntrepriseVersion;
 
-    Boolean isCancelled = false;
+
+    private Intent mainIntent;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splash);
+
+        mainIntent = new Intent(SplashActivity.this, MainActivity.class);
+
+        EntrepriseName = (TextView) findViewById(R.id.name_entreprise);
+        EntrepriseSlogan = (TextView) findViewById(R.id.slogan_entreprise);
+        EntrepriseVersion = (TextView) findViewById(R.id.app_version);
+
+        Animation transitionAlfa = AnimationUtils.loadAnimation(this, R.anim.transition_alfa);
+        EntrepriseName.startAnimation(transitionAlfa);
+        EntrepriseSlogan.startAnimation(transitionAlfa);
+        EntrepriseVersion.startAnimation(transitionAlfa);
+
+        new Handler().postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                SplashActivity.this.startActivity(mainIntent);
+                SplashActivity.this.finish();
+            }
+        }, 3000);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /**Boolean isCancelled = false;
     private ProgressBar progressBar;
     long id = 0;
     String url = "";
@@ -94,6 +135,6 @@ public class SplashActivity extends AppCompatActivity
         }, Config.SPLASH_TIME);
 
     }
-
+**/
 
 }

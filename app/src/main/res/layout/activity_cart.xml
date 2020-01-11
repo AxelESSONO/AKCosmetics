@@ -28,7 +28,7 @@
             android:layout_marginTop="10dp"/>
 
     </RelativeLayout>
-
+<!--
     <TextView
         android:id="@+id/msg1"
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
         android:layout_centerVertical="true"
         android:text="Félicitation, votre commande est passée avec succès. Vous recevrez votre commande dans bientôt."
         android:textSize="20dp"
-        android:visibility="gone"/>
+        android:visibility="gone"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
 
@@ -58,15 +58,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimaryDark"
-        android:text="Suivant"
-        android:textColor="@android:color/white"
-        android:textAllCaps="false"
-        android:textSize="20dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/buttons"
+        android:text="Suivant"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
+
+    <include
+        android:id="@+id/lyt_empty_history"
+        layout="@layout/include_empty_cart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_cart_list"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/prgLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 
 
 </RelativeLayout>
